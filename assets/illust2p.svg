@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 250" fill="none"
-     stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- ケトルベル + 心拍 -->
+     stroke="#3a4a55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M120 120 a45 55 0 1 1 90 0 q6 40 -45 40 q-51 0 -45 -40 Z"/>
-  <path d="M143 95 a22 22 0 0 1 44 0" stroke="rgba(163,213,79,.9)"/>
-  <path d="M250 130 h35 l12 -30 l20 60 l14 -30 h40" stroke="rgba(163,213,79,.9)"/>
+  <path d="M143 95 a22 22 0 0 1 44 0" stroke="#43a047"/>
+  <path d="M250 130 h35 l12 -30 l20 60 l14 -30 h40" stroke="#43a047"/>
 </svg>

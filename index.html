@@ -19,17 +19,17 @@
    ============================================================ */
 
 :root{
-  --gray:      #6c7074;
-  --gray-alt:  #63676b;
-  --gray-dark: #2b2e31;
-  --panel:     rgba(255,255,255,.07);
-  --panel-2:   rgba(255,255,255,.13);
-  --line:      rgba(255,255,255,.28);
-  --line-soft: rgba(255,255,255,.15);
-  --ink:       #ffffff;
-  --ink-mute:  rgba(255,255,255,.78);
-  --ink-dim:   rgba(255,255,255,.52);
-  --accent:    #a3d55f;   /* フィットネスらしい生命力のグリーン */
+  --gray:      #e6f2fb;   /* 淡い水色（メイン背景） */
+  --gray-alt:  #f3f9fd;   /* さらに明るい水色（交互セクション） */
+  --gray-dark: #2b3742;   /* 濃紺スレート（フッター・帯のオーバーレイ用） */
+  --panel:     rgba(45,55,66,.045);
+  --panel-2:   rgba(45,55,66,.07);
+  --line:      rgba(45,55,66,.18);
+  --line-soft: rgba(45,55,66,.10);
+  --ink:       #33424d;   /* 濃いスレートの文字色 */
+  --ink-mute:  rgba(51,66,77,.72);
+  --ink-dim:   rgba(51,66,77,.48);
+  --accent:    #3f9a46;   /* フィットネスらしい生命力のグリーン */
   --maxw:      1180px;
   --serif:     "Cormorant Garamond", serif;      /* 英字ディスプレイ */
   --mincho:    "Shippori Mincho", serif;          /* 和文見出し */
@@ -72,32 +72,34 @@ ul{list-style:none}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   font-family:var(--mincho);font-weight:500;letter-spacing:.16em;font-size:14.5px;
-  padding:19px 42px;border:1px solid var(--line);color:#fff;background:transparent;
+  padding:19px 42px;border:1px solid var(--line);color:var(--ink);background:transparent;
   transition:.4s cubic-bezier(.2,.7,.3,1);cursor:pointer;
 }
-.btn:hover{background:#fff;color:var(--gray-dark);border-color:#fff}
+.btn:hover{background:var(--gray-dark);color:#fff;border-color:var(--gray-dark)}
 .btn-fill{background:#fff;color:var(--gray-dark);border-color:#fff}
 .btn-fill:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-solid{background:var(--gray-dark);color:#fff;border-color:var(--gray-dark)}
+.btn-solid:hover{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-line{background:#06c755;border-color:#06c755;color:#fff}
-.btn-line:hover{background:#fff;color:#06c755;border-color:#fff}
+.btn-line:hover{background:#fff;color:#06c755;border-color:#06c755}
 
 /* ============================================================
    HEADER
    ============================================================ */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 0;transition:.4s}
-.site-header.scrolled{padding:15px 0;background:rgba(108,112,116,.9);backdrop-filter:blur(12px)}
+.site-header.scrolled{padding:15px 0;background:rgba(230,242,251,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line-soft)}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;flex-direction:column;line-height:1.3}
-.brand .en{font-family:var(--logo);font-weight:600;font-size:24px;letter-spacing:.1em;color:#fff}
+.brand .en{font-family:var(--logo);font-weight:600;font-size:24px;letter-spacing:.1em;color:var(--ink)}
 .brand .jp{font-family:var(--mincho);font-size:11px;letter-spacing:.12em;color:var(--ink-mute);margin-top:2px}
 .nav{display:flex;align-items:center;gap:34px}
-.nav a{font-family:var(--serif);font-size:17.6px;letter-spacing:.1em;color:#fff;transition:.3s;position:relative}
+.nav a{font-family:var(--serif);font-size:17.6px;letter-spacing:.1em;color:var(--ink);transition:.3s;position:relative}
 .nav a .j{display:block;font-family:var(--gothic);font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-align:center;margin-top:1px}
 .nav a:hover{color:var(--accent)}
 .header-cta{display:flex;align-items:center}
 .header-cta .btn{padding:12px 26px;font-size:12.5px}
 .nav-toggle{display:none;flex-direction:column;gap:6px;background:none;border:0;cursor:pointer;padding:8px}
-.nav-toggle span{width:26px;height:1.5px;background:#fff;transition:.3s}
+.nav-toggle span{width:26px;height:1.5px;background:var(--ink);transition:.3s}
 
 /* ============================================================
    HERO
@@ -108,10 +110,10 @@ ul{list-style:none}
 .hero-copy .who .av{width:60px;height:60px;border-radius:50%;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;flex-shrink:0}
 .hero-copy .who .av img{width:46px;margin-bottom:-2px}
 .hero-copy .who .t{font-family:var(--mincho);font-size:12.5px;letter-spacing:.2em;color:var(--ink-mute);line-height:1.7}
-.hero-copy .who .t b{display:block;font-weight:500;font-size:14.5px;color:#fff;letter-spacing:.12em}
+.hero-copy .who .t b{display:block;font-weight:500;font-size:14.5px;color:var(--ink);letter-spacing:.12em}
 .hero-copy h1{font-family:var(--mincho);font-weight:500;font-size:clamp(46px,7.9vw,89px);line-height:1.5;letter-spacing:.04em;margin-bottom:30px;text-align:right}
 .hero-copy h1 span:nth-child(2),.hero-copy h1 span:nth-child(3){padding-right:12%}
-.hero-copy h1 .g-img{display:inline-block;height:1.55em;width:auto;vertical-align:-.5em;margin:0 .04em}
+.hero-copy h1 .g-img{display:inline-block;height:1.55em;width:auto;vertical-align:-.5em;margin:0 .04em;filter:brightness(0);opacity:.82}
 .hero-copy h1 span{display:block;opacity:0;transform:translateY(26px)}
 .hero-copy h1 .pre{font-size:.42em;letter-spacing:.14em;margin-bottom:.15em;color:var(--ink-mute);text-align:center}
 .hero-copy h1 span:nth-child(1){animation:rise .9s .2s forwards}
@@ -134,7 +136,7 @@ ul{list-style:none}
 .hero-visual .frame{position:relative;overflow:hidden}
 .hero-visual .frame img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:2s}
 .hero-visual::before{content:"";position:absolute;top:-14px;left:-14px;right:26px;bottom:26px;border:1px solid var(--line);z-index:-1}
-.hero-visual .cap{position:absolute;bottom:20px;left:20px;font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:.06em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hero-visual .cap{position:absolute;bottom:20px;left:20px;font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:.06em;color:var(--ink);text-shadow:0 1px 8px rgba(255,255,255,.6)}
 
 @keyframes rise{to{opacity:1;transform:none}}
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--serif);font-size:12px;letter-spacing:.3em;color:var(--ink-dim);writing-mode:vertical-rl;display:flex;align-items:center;gap:14px}
@@ -161,7 +163,7 @@ ul{list-style:none}
 .il{display:block;height:auto}
 .hband{position:relative;max-width:920px;margin:4px auto 0;min-height:250px}
 .hband .cfig{position:absolute;right:0;bottom:6px;width:430px;opacity:.82}
-.hband .cline{position:absolute;left:0;right:0;bottom:6px;height:1px;background:rgba(255,255,255,.7)}
+.hband .cline{position:absolute;left:0;right:0;bottom:6px;height:1px;background:var(--line)}
 .hband .cband-head{position:absolute;left:1%;bottom:14px;z-index:2}
 .concept-txt{font-family:var(--mincho);font-size:16px;line-height:2.55;letter-spacing:.06em;text-align:center;max-width:760px;margin:44px auto 0}
 .concept-txt .accent{color:var(--accent)}
@@ -194,7 +196,7 @@ ul{list-style:none}
 .worry:hover{background:var(--panel);padding-left:20px}
 .worry .n{font-family:var(--serif);font-size:30px;color:var(--accent);letter-spacing:.05em}
 .worry p{font-family:var(--mincho);font-size:16px;color:var(--ink)}
-.worries-note{text-align:center;margin-top:56px;font-family:var(--mincho);font-weight:500;font-size:clamp(20px,3vw,30px);color:#fff;letter-spacing:.08em;line-height:1.9}
+.worries-note{text-align:center;margin-top:56px;font-family:var(--mincho);font-weight:500;font-size:clamp(20px,3vw,30px);color:var(--ink);letter-spacing:.08em;line-height:1.9}
 .worries-note .small{display:block;font-size:14px;color:var(--ink-mute);font-weight:400;margin-top:14px;letter-spacing:.14em}
 
 /* ---------- 選ばれる理由 ---------- */
@@ -233,7 +235,7 @@ ul{list-style:none}
 .plan:hover{background:var(--panel)}
 .plan .pname{font-family:var(--mincho);font-weight:500;font-size:19px;letter-spacing:.08em;margin-bottom:8px}
 .plan .ptgt{font-size:12.5px;color:var(--ink-dim);margin-bottom:28px;letter-spacing:.08em}
-.plan .price{font-family:var(--serif);font-weight:500;font-size:52px;color:#fff;line-height:1;letter-spacing:.02em}
+.plan .price{font-family:var(--serif);font-weight:500;font-size:52px;color:var(--ink);line-height:1;letter-spacing:.02em}
 .plan .price .yen{font-size:22px}
 .plan .price small{font-size:16px;color:var(--ink-mute)}
 .plan .per{font-size:11.5px;color:var(--ink-dim);margin:8px 0 30px;letter-spacing:.1em}
@@ -260,7 +262,7 @@ ul{list-style:none}
 .rep-body .name{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,3.4vw,38px);margin:8px 0 2px;letter-spacing:.08em}
 .rep-body .name small{font-family:var(--serif);font-size:15px;color:var(--ink-mute);font-weight:400;margin-left:14px;letter-spacing:.1em}
 .rep-body p{font-family:var(--mincho);color:var(--ink-mute);font-size:15px;margin-top:22px;line-height:2.3;letter-spacing:.04em}
-.rep-body .quote{font-family:var(--mincho);font-weight:500;font-size:17px;color:#fff;line-height:2.1;margin-top:28px;padding-left:26px;border-left:1px solid var(--accent);letter-spacing:.05em}
+.rep-body .quote{font-family:var(--mincho);font-weight:500;font-size:17px;color:var(--ink);line-height:2.1;margin-top:28px;padding-left:26px;border-left:1px solid var(--accent);letter-spacing:.05em}
 
 /* ---------- 声 ---------- */
 .voices{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:60px}
@@ -287,9 +289,9 @@ ul{list-style:none}
 .cta-inner{position:relative;z-index:2}
 .cta .en{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.4vw,34px);color:var(--accent);letter-spacing:.06em;margin-bottom:20px}
 .cta h2{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,4.4vw,44px);line-height:1.8;margin-bottom:24px;letter-spacing:.08em;color:#fff}
-.cta p{font-family:var(--mincho);color:var(--ink-mute);margin-bottom:46px;font-size:15.5px;letter-spacing:.06em}
+.cta p{font-family:var(--mincho);color:rgba(255,255,255,.82);margin-bottom:46px;font-size:15.5px;letter-spacing:.06em}
 .cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-.cta .note{margin-top:30px;font-size:12.5px;color:var(--ink-dim);letter-spacing:.1em}
+.cta .note{margin-top:30px;font-size:12.5px;color:rgba(255,255,255,.6);letter-spacing:.1em}
 
 /* ---------- FOOTER ---------- */
 .footer{background:var(--gray-dark);color:#e8e5e1;padding:90px 0 40px}
@@ -307,7 +309,7 @@ ul{list-style:none}
 .footer-bottom small{font-family:var(--serif);color:#8f8a83;font-size:12px;letter-spacing:.08em}
 
 /* ---------- モバイル追従バー ---------- */
-.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(43,46,49,.96);backdrop-filter:blur(10px);padding:12px;gap:12px;border-top:1px solid var(--line-soft)}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(243,249,253,.96);backdrop-filter:blur(10px);padding:12px;gap:12px;border-top:1px solid var(--line-soft)}
 .mobile-bar .btn{flex:1;padding:15px;font-size:13px}
 
 /* ---------- scroll reveal ---------- */
@@ -339,7 +341,7 @@ ul{list-style:none}
   .nav-toggle{display:flex}
   .mobile-bar{display:flex}
   body{padding-bottom:72px}
-  .nav.open{display:flex;position:fixed;inset:0;background:rgba(43,46,49,.98);flex-direction:column;justify-content:center;gap:34px;z-index:98}
+  .nav.open{display:flex;position:fixed;inset:0;background:rgba(240,247,252,.98);flex-direction:column;justify-content:center;gap:34px;z-index:98}
   .nav.open a{font-size:26px}
   .nav.open a .j{font-size:11px;margin-top:4px}
 }
@@ -550,7 +552,7 @@ ul{list-style:none}
         <div class="price"><span class="yen">¥</span>30,000<small>〜</small></div>
         <div class="per">月額（税別）</div>
         <ul><li>記帳・月次決算</li><li>決算・法人税申告</li><li>毎月の業績報告・面談</li><li>節税・資金繰りの相談</li></ul>
-        <a href="#contact" class="btn btn-fill">相談する</a>
+        <a href="#contact" class="btn btn-solid">相談する</a>
       </div>
       <div class="plan">
         <div class="pname">スポット</div>

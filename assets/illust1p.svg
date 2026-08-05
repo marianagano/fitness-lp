@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 250" fill="none"
-     stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- ダンベルを持つ人 -->
+     stroke="#3a4a55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="150" cy="70" r="20"/>
   <path d="M150 90 L150 150 M150 110 L110 135 M150 110 L195 130 M150 150 L128 205 M150 150 L175 205"/>
-  <!-- ダンベル -->
-  <path d="M95 135 h35 M105 122 v26 M95 118 v34 M195 128 h40 M223 116 v26 M233 112 v34" stroke="rgba(163,213,79,.9)"/>
+  <path d="M95 135 h35 M105 122 v26 M95 118 v34 M195 128 h40 M223 116 v26 M233 112 v34" stroke="#43a047"/>
 </svg>

@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 250" fill="none"
-     stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- 走る人 -->
+     stroke="#3a4a55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="210" cy="60" r="18"/>
   <path d="M205 78 q30 10 20 45 M225 90 l35 15 M225 90 l-30 25 M225 123 l-15 55 M225 123 l40 40"/>
-  <path d="M120 210 h190" stroke="rgba(163,213,79,.9)"/>
+  <path d="M120 210 h190" stroke="#43a047"/>
 </svg>
