@@ -253,16 +253,17 @@ ul{list-style:none}
 .step p{font-size:14px;color:var(--ink-mute);line-height:2.05}
 
 /* ---------- 代表紹介 ---------- */
-.rep{max-width:760px;margin:56px auto 0;text-align:center}
-.rep-photo{position:relative;max-width:200px;margin:0 auto 34px}
+.rep{display:grid;grid-template-columns:220px 1fr;gap:52px;align-items:center;max-width:900px;margin:56px auto 0}
+.rep-photo{position:relative}
 .rep-photo .disc{aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line)}
 .rep-photo .disc img{width:100%;height:100%;object-fit:cover;object-position:50% 10%}
 .rep-photo::before{content:"";position:absolute;inset:-16px;border:1px solid var(--line-soft);border-radius:50%;z-index:-1}
 .rep-body .role{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:17px;letter-spacing:.06em}
 .rep-body .name{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,3.4vw,38px);margin:8px 0 2px;letter-spacing:.08em}
 .rep-body .name small{font-family:var(--serif);font-size:15px;color:var(--ink-mute);font-weight:400;margin-left:14px;letter-spacing:.1em}
-.rep-body p{font-family:var(--mincho);color:var(--ink-mute);font-size:15px;margin:22px auto 0;line-height:2.3;letter-spacing:.04em;max-width:620px}
-.rep-body .quote{font-family:var(--mincho);font-weight:500;font-size:17px;color:var(--ink);line-height:2.1;margin:34px auto 0;padding-top:30px;border-top:1px solid var(--accent);letter-spacing:.05em;max-width:640px;display:inline-block}
+.rep-body p{font-family:var(--mincho);color:var(--ink-mute);font-size:15px;margin-top:22px;line-height:2.3;letter-spacing:.04em}
+.rep-quote{max-width:660px;margin:48px auto 0;text-align:center;font-family:var(--mincho);font-weight:500;font-size:17px;color:var(--ink);line-height:2.1;letter-spacing:.05em;padding-top:34px;position:relative}
+.rep-quote::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:var(--accent)}
 
 /* ---------- 声 ---------- */
 .voices{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:60px}
@@ -605,9 +606,9 @@ ul{list-style:none}
         <div class="role">Representative</div>
         <div class="name">玉井 貴幸<small>Takayuki Tamai</small></div>
         <p>1985年、東京都生まれ。駒澤大学経済学部を卒業後、アメリカ・ロサンゼルスへ留学。税理士法人での実務、コンサルティングファーム、大手証券会社への出向など、いろいろな現場を経験してきました。税金の話だけじゃなく、経営やお金まわりのことも、あなたのそばで一緒に考えます。</p>
-        <p class="quote">税金の話って、むずかしくて身構えちゃいますよね。<br>だからこそ、なんでも気軽に聞ける存在でいたい。<br>数字の不安は私にまかせて、あなたは夢に集中してください。</p>
       </div>
     </div>
+    <p class="rep-quote reveal">税金の話って、むずかしくて身構えちゃいますよね。<br>だからこそ、なんでも気軽に聞ける存在でいたい。<br>数字の不安は私にまかせて、あなたは夢に集中してください。</p>
   </div>
 </section>
 
