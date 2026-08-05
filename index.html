@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>[ジム名]｜あなたを変える、パーソナルジム。なりたい自分へ、最短で。</title>
+<meta name="description" content="完全個室のマンツーマン指導で、運動が続かない・自己流で結果が出ない悩みを解決。トレーニングと食事の両面から、あなたのなりたいカラダへ伴走します。無料カウンセリング・体験トレーニング受付中。">
+
+<!-- ========== FONTS（明朝×セリフのエレガント系） ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   フィットネスLP  —  Slate & White / Elegant Serif × Vital Green
+   （G&J税理士LPと同一フォーマット。配色と内容をフィットネス向けに）
+   ============================================================ */
+
+:root{
+  --gray:      #6c7074;
+  --gray-alt:  #63676b;
+  --gray-dark: #2b2e31;
+  --panel:     rgba(255,255,255,.07);
+  --panel-2:   rgba(255,255,255,.13);
+  --line:      rgba(255,255,255,.28);
+  --line-soft: rgba(255,255,255,.15);
+  --ink:       #ffffff;
+  --ink-mute:  rgba(255,255,255,.78);
+  --ink-dim:   rgba(255,255,255,.52);
+  --accent:    #a3d55f;   /* 生命力・健康の控えめグリーン */
+  --maxw:      1180px;
+  --serif:     "Cormorant Garamond", serif;      /* 英字ディスプレイ */
+  --mincho:    "Shippori Mincho", serif;          /* 和文見出し */
+  --gothic:    "Zen Kaku Gothic New", sans-serif; /* 和文本文 */
+  --logo:      "Cinzel", serif;                   /* ロゴ（ジム名） */
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--gothic);
+  background:var(--gray);
+  color:var(--ink);
+  line-height:2.05;
+  font-weight:400;
+  letter-spacing:.05em;
+  font-feature-settings:"palt";
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* ---------- セクション見出し（01 / Concept 形式） ---------- */
+.shead{display:flex;align-items:flex-end;gap:26px;margin-bottom:14px}
+.shead .num{font-family:var(--serif);font-size:15px;letter-spacing:.28em;color:var(--ink-mute);padding-bottom:10px;position:relative;white-space:nowrap}
+.shead .num::before{content:"";position:absolute;top:0;left:0;width:26px;height:1px;background:var(--accent)}
+.shead .titles .en{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,72px);line-height:.95;letter-spacing:.02em}
+.shead .titles .jp{font-family:var(--mincho);font-weight:400;font-size:13px;letter-spacing:.34em;color:var(--ink-mute);margin-top:12px}
+.center .shead{justify-content:center;text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+.lead{color:var(--ink-mute);font-size:clamp(14.5px,1.6vw,16px);max-width:600px;font-weight:400;margin-top:26px}
+.lead.oneline{max-width:none;white-space:nowrap}
+@media(max-width:820px){.lead.oneline{white-space:normal;max-width:600px}}
+
+/* ---------- ボタン（細い罫線の長方形） ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--mincho);font-weight:500;letter-spacing:.16em;font-size:14.5px;
+  padding:19px 42px;border:1px solid var(--line);color:#fff;background:transparent;
+  transition:.4s cubic-bezier(.2,.7,.3,1);cursor:pointer;
+}
+.btn:hover{background:#fff;color:var(--gray-dark);border-color:#fff}
+.btn-fill{background:#fff;color:var(--gray-dark);border-color:#fff}
+.btn-fill:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-line{background:#06c755;border-color:#06c755;color:#fff}
+.btn-line:hover{background:#fff;color:#06c755;border-color:#fff}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 0;transition:.4s}
+.site-header.scrolled{padding:15px 0;background:rgba(108,112,116,.9);backdrop-filter:blur(12px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:1.3}
+.brand .en{font-family:var(--logo);font-weight:600;font-size:24px;letter-spacing:.1em;color:#fff}
+.brand .jp{font-family:var(--mincho);font-size:11px;letter-spacing:.12em;color:var(--ink-mute);margin-top:2px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-family:var(--serif);font-size:17.6px;letter-spacing:.1em;color:#fff;transition:.3s;position:relative}
+.nav a .j{display:block;font-family:var(--gothic);font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-align:center;margin-top:1px}
+.nav a:hover{color:var(--accent)}
+.header-cta{display:flex;align-items:center}
+.header-cta .btn{padding:12px 26px;font-size:12.5px}
+.nav-toggle{display:none;flex-direction:column;gap:6px;background:none;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{width:26px;height:1.5px;background:#fff;transition:.3s}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 100px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;width:100%}
+.hero-copy .who{display:flex;align-items:center;gap:14px;margin-bottom:30px;opacity:0;transform:translateY(18px);animation:rise .9s .1s forwards}
+.hero-copy .who .av{width:60px;height:60px;border-radius:50%;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;flex-shrink:0}
+.hero-copy .who .av img{width:46px;margin-bottom:-2px}
+.hero-copy .who .t{font-family:var(--mincho);font-size:12.5px;letter-spacing:.2em;color:var(--ink-mute);line-height:1.7}
+.hero-copy .who .t b{display:block;font-weight:500;font-size:14.5px;color:#fff;letter-spacing:.12em}
+.hero-copy h1{font-family:var(--mincho);font-weight:500;font-size:clamp(42px,7.2vw,82px);line-height:1.5;letter-spacing:.04em;margin-bottom:30px;text-align:right}
+.hero-copy h1 span:nth-child(2),.hero-copy h1 span:nth-child(3){padding-right:8%}
+.hero-copy h1 .accent{color:var(--accent)}
+.hero-copy h1 span{display:block;opacity:0;transform:translateY(26px)}
+.hero-copy h1 .pre{font-size:.42em;letter-spacing:.14em;margin-bottom:.15em;color:var(--ink-mute);text-align:center}
+.hero-copy h1 span:nth-child(1){animation:rise .9s .2s forwards}
+.hero-copy h1 span:nth-child(2){animation:rise .9s .34s forwards}
+.hero-copy h1 span:nth-child(3){animation:rise .9s .48s forwards}
+.hero-copy .sub{font-family:var(--mincho);color:var(--ink-mute);font-size:clamp(15px,1.9vw,18px);line-height:2.3;margin-bottom:40px;text-align:center;opacity:0;transform:translateY(18px);animation:rise .9s .58s forwards}
+.hero-copy .rep-sign{display:flex;align-items:center;justify-content:center;gap:21px;padding-right:6%;opacity:0;transform:translateY(18px);animation:rise .9s .74s forwards}
+.hero-copy .rep-sign .av{width:81px;height:81px;border-radius:50%;overflow:hidden;border:1px solid var(--line);flex-shrink:0}
+.hero-copy .rep-sign .av img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.hero-copy .rep-sign .t{font-family:var(--mincho);line-height:1.7}
+.hero-copy .rep-sign .t b{font-weight:500;font-size:22px;letter-spacing:.12em;margin-right:12px}
+.hero-copy .rep-sign .t i{font-style:normal;font-size:15px;color:var(--ink-mute);letter-spacing:.16em}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(18px);animation:rise .9s .74s forwards}
+.hero-tags{margin-top:40px;display:flex;gap:28px;flex-wrap:wrap;opacity:0;animation:rise .9s .9s forwards}
+.hero-tags span{font-family:var(--mincho);font-size:13px;letter-spacing:.14em;color:var(--ink-mute);position:relative;padding-left:20px}
+.hero-tags span::before{content:"";position:absolute;left:0;top:50%;width:9px;height:9px;border:1px solid var(--accent);border-radius:50%;transform:translateY(-50%)}
+
+/* ヒーロー写真 */
+.hero-visual{position:relative;opacity:0;transform:translateY(26px);animation:rise 1.1s .5s forwards}
+.hero-visual .frame{position:relative;overflow:hidden}
+.hero-visual .frame img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:2s}
+.hero-visual::before{content:"";position:absolute;top:-14px;left:-14px;right:26px;bottom:26px;border:1px solid var(--line);z-index:-1}
+.hero-visual .cap{position:absolute;bottom:20px;left:20px;font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:.06em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+
+@keyframes rise{to{opacity:1;transform:none}}
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--serif);font-size:12px;letter-spacing:.3em;color:var(--ink-dim);writing-mode:vertical-rl;display:flex;align-items:center;gap:14px}
+.scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(var(--ink-dim),transparent);animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============================================================
+   SECTION 汎用
+   ============================================================ */
+.section{padding:clamp(84px,11vw,150px) 0;position:relative}
+.section.alt{background:var(--gray-alt)}
+.center{text-align:center}
+
+/* ---------- CONCEPT（写真＋テキスト） ---------- */
+.concept{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center}
+.concept .photo{position:relative;overflow:hidden}
+.concept .photo img{width:100%;aspect-ratio:5/6;object-fit:cover}
+.concept .body{padding:0 0 0 72px}
+.concept .body .txt{font-family:var(--mincho);font-size:16px;line-height:2.5;color:var(--ink);margin-top:34px;letter-spacing:.06em}
+.concept .body .txt .accent{color:var(--accent)}
+.concept .body .sign{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink-mute)}
+
+/* ---------- セクション横のラインアート ---------- */
+.il{display:block;height:auto}
+.hband{position:relative;max-width:920px;margin:4px auto 0;min-height:250px}
+.hband .cfig{position:absolute;right:0;bottom:6px;width:430px;opacity:.82}
+.hband .cline{position:absolute;left:0;right:0;bottom:6px;height:1px;background:rgba(255,255,255,.7)}
+.hband .cband-head{position:absolute;left:1%;bottom:14px;z-index:2}
+.concept-txt{font-family:var(--mincho);font-size:16px;line-height:2.55;letter-spacing:.06em;text-align:center;max-width:760px;margin:44px auto 0}
+.concept-txt .accent{color:var(--accent)}
+.concept-sign{text-align:center;margin-top:26px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink-mute)}
+@media(max-width:820px){
+  .hband{min-height:0;max-width:360px}
+  .hband .cfig{position:static;width:100%;margin:12px auto 0}
+  .hband .cline{display:none}
+  .hband .cband-head{position:static}
+  .concept-txt{font-size:15px;line-height:2.35}
+}
+.concept2{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:50px}
+.concept2 .txt{font-family:var(--mincho);font-size:16px;line-height:2.55;letter-spacing:.06em;color:var(--ink)}
+.concept2 .txt .accent{color:var(--accent)}
+.concept2 .sign{margin-top:26px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink-mute)}
+.concept2 .il{width:100%;opacity:.9}
+.head-il{display:grid;grid-template-columns:1fr .82fr;gap:52px;align-items:center;text-align:left}
+.head-il .il{width:100%;max-width:430px;justify-self:end;opacity:.9}
+.flow-il{display:grid;grid-template-columns:1.1fr .8fr;gap:52px;align-items:center}
+.flow-il .flow{margin:0;max-width:none}
+.flow-il .il{width:100%;max-width:360px;justify-self:center;opacity:.9}
+@media(max-width:820px){
+  .concept2,.head-il,.flow-il{grid-template-columns:1fr;gap:34px}
+  .concept2 .il,.head-il .il,.flow-il .il{max-width:320px;justify-self:center;margin:0 auto;order:-1}
+}
+
+/* ---------- 悩み共感 ---------- */
+.worries{margin-top:60px;border-top:1px solid var(--line-soft)}
+.worry{display:grid;grid-template-columns:70px 1fr;gap:24px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line-soft);transition:.4s}
+.worry:hover{background:var(--panel);padding-left:20px}
+.worry .n{font-family:var(--serif);font-size:30px;color:var(--accent);letter-spacing:.05em}
+.worry p{font-family:var(--mincho);font-size:16px;color:var(--ink)}
+.worries-note{text-align:center;margin-top:56px;font-family:var(--mincho);font-weight:500;font-size:clamp(20px,3vw,30px);color:#fff;letter-spacing:.08em;line-height:1.9}
+.worries-note .small{display:block;font-size:14px;color:var(--ink-mute);font-weight:400;margin-top:14px;letter-spacing:.14em}
+
+/* ---------- 選ばれる理由 ---------- */
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px}
+.reason{padding:0 40px;text-align:center;position:relative}
+.reason+.reason::before{content:"";position:absolute;left:0;top:10%;bottom:10%;width:1px;background:var(--line-soft)}
+.reason .ic{width:48px;height:48px;margin:0 auto 26px;color:var(--accent);stroke-width:1}
+.reason .no{font-family:var(--serif);font-size:14px;letter-spacing:.24em;color:var(--ink-mute);margin-bottom:16px}
+.reason h3{font-family:var(--mincho);font-weight:500;font-size:21px;line-height:1.7;margin-bottom:18px;letter-spacing:.04em}
+.reason p{font-size:14px;color:var(--ink-mute);line-height:2.1}
+
+/* ---------- 帯（全面写真＋コピー） ---------- */
+.band{position:relative;padding:clamp(120px,18vw,220px) 0;text-align:center;background-position:center;background-size:cover;background-attachment:fixed}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(43,46,49,.62),rgba(43,46,49,.62))}
+.band .inner{position:relative;z-index:2}
+.band .en{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(20px,3vw,30px);color:var(--accent);letter-spacing:.08em;margin-bottom:18px}
+.band h2{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,4.6vw,46px);line-height:1.7;letter-spacing:.1em;color:#fff}
+
+/* ---------- サービス ---------- */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:64px}
+.svc{transition:.4s}
+.svc .ph{position:relative;overflow:hidden;margin-bottom:26px}
+.svc .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:1.2s}
+.svc:hover .ph img{transform:scale(1.06)}
+.svc .ph .no{position:absolute;top:16px;left:16px;font-family:var(--serif);font-size:15px;letter-spacing:.2em;color:#fff;background:rgba(43,46,49,.5);padding:4px 14px;backdrop-filter:blur(4px)}
+.svc h3{font-family:var(--mincho);font-weight:500;font-size:20px;letter-spacing:.05em;margin-bottom:4px}
+.svc .en{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--accent);letter-spacing:.08em;margin-bottom:14px}
+.svc p{font-size:14px;color:var(--ink-mute);line-height:2.1}
+
+/* ---------- 料金 ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border:1px solid var(--line-soft)}
+.plan{padding:52px 36px;text-align:center;position:relative;transition:.4s}
+.plan+.plan{border-left:1px solid var(--line-soft)}
+.plan.featured{background:var(--panel-2)}
+.plan.featured .tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.1em;color:var(--gray-dark);background:var(--accent);padding:4px 20px}
+.plan:hover{background:var(--panel)}
+.plan .pname{font-family:var(--mincho);font-weight:500;font-size:19px;letter-spacing:.08em;margin-bottom:8px}
+.plan .ptgt{font-size:12.5px;color:var(--ink-dim);margin-bottom:28px;letter-spacing:.08em}
+.plan .price{font-family:var(--serif);font-weight:500;font-size:52px;color:#fff;line-height:1;letter-spacing:.02em}
+.plan .price .yen{font-size:22px}
+.plan .price small{font-size:16px;color:var(--ink-mute)}
+.plan .per{font-size:11.5px;color:var(--ink-dim);margin:8px 0 30px;letter-spacing:.1em}
+.plan ul{text-align:left;display:flex;flex-direction:column;gap:15px;margin-bottom:36px}
+.plan ul li{font-family:var(--mincho);font-size:14px;color:var(--ink);padding-bottom:15px;border-bottom:1px solid var(--line-soft);letter-spacing:.04em}
+.plan .btn{width:100%;padding:15px}
+.price-note{text-align:center;font-size:12.5px;color:var(--ink-dim);margin-top:30px;letter-spacing:.08em}
+
+/* ---------- 流れ ---------- */
+.flow{margin-top:64px;max-width:760px;margin-left:auto;margin-right:auto}
+.step{display:grid;grid-template-columns:auto 1fr;gap:34px;padding:34px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.step:first-child{border-top:1px solid var(--line-soft)}
+.step .n{font-family:var(--serif);font-size:40px;color:var(--accent);line-height:1;letter-spacing:.02em}
+.step h4{font-family:var(--mincho);font-weight:500;font-size:19px;letter-spacing:.06em;margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-mute);line-height:2.05}
+
+/* ---------- 代表・トレーナー紹介 ---------- */
+.rep{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;margin-top:56px}
+.rep-photo{position:relative}
+.rep-photo .disc{aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line)}
+.rep-photo .disc img{width:100%;height:100%;object-fit:cover;object-position:50% 10%}
+.rep-photo::before{content:"";position:absolute;inset:-16px;border:1px solid var(--line-soft);border-radius:50%;z-index:-1}
+.rep-body .role{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:17px;letter-spacing:.06em}
+.rep-body .name{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,3.4vw,38px);margin:8px 0 2px;letter-spacing:.08em}
+.rep-body .name small{font-family:var(--serif);font-size:15px;color:var(--ink-mute);font-weight:400;margin-left:14px;letter-spacing:.1em}
+.rep-body p{font-family:var(--mincho);color:var(--ink-mute);font-size:15px;margin-top:22px;line-height:2.3;letter-spacing:.04em}
+.rep-body .quote{font-family:var(--mincho);font-weight:500;font-size:17px;color:#fff;line-height:2.1;margin-top:28px;padding-left:26px;border-left:1px solid var(--accent);letter-spacing:.05em}
+
+/* ---------- 声 ---------- */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:60px}
+.voice{text-align:center}
+.voice .mark{font-family:var(--serif);font-size:70px;line-height:.5;color:var(--line);height:34px;display:block}
+.voice p{font-family:var(--mincho);font-size:15px;color:var(--ink);line-height:2.2;margin:20px 0 22px}
+.voice .who{font-family:var(--serif);font-size:14px;letter-spacing:.14em;color:var(--ink-mute)}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:56px;max-width:840px;margin-left:auto;margin-right:auto}
+.qa{border-bottom:1px solid var(--line-soft)}
+.qa summary{list-style:none;cursor:pointer;padding:28px 50px 28px 46px;position:relative;font-family:var(--mincho);font-weight:500;font-size:16.5px;letter-spacing:.05em;transition:.3s}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"Q";position:absolute;left:0;top:26px;font-family:var(--serif);font-size:22px;color:var(--accent)}
+.qa summary::after{content:"";position:absolute;right:10px;top:34px;width:14px;height:1px;background:var(--accent);transition:.3s}
+.qa summary .cross{position:absolute;right:16px;top:28px;width:1px;height:14px;background:var(--accent);transition:.3s}
+.qa[open] summary .cross{transform:scaleY(0)}
+.qa summary:hover{color:var(--accent)}
+.qa .a{padding:0 46px 30px 46px;font-family:var(--mincho);color:var(--ink-mute);font-size:14.5px;line-height:2.2}
+
+/* ---------- CTA ---------- */
+.cta{position:relative;text-align:center;padding:clamp(110px,15vw,180px) 0;background-position:center;background-size:cover}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(43,46,49,.72),rgba(43,46,49,.72))}
+.cta-inner{position:relative;z-index:2}
+.cta .en{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.4vw,34px);color:var(--accent);letter-spacing:.06em;margin-bottom:20px}
+.cta h2{font-family:var(--mincho);font-weight:500;font-size:clamp(26px,4.4vw,44px);line-height:1.8;margin-bottom:24px;letter-spacing:.08em;color:#fff}
+.cta p{font-family:var(--mincho);color:var(--ink-mute);margin-bottom:46px;font-size:15.5px;letter-spacing:.06em}
+.cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.cta .note{margin-top:30px;font-size:12.5px;color:var(--ink-dim);letter-spacing:.1em}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--gray-dark);color:#e8e5e1;padding:90px 0 40px}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;margin-bottom:64px}
+.footer .brand .en{color:#fff}
+.footer .brand .jp{color:#b0aaa2}
+.footer-desc{font-family:var(--mincho);color:#b0aaa2;font-size:13.5px;margin-top:24px;max-width:320px;line-height:2.1}
+.footer h5{font-family:var(--serif);letter-spacing:.16em;color:var(--accent);font-size:15px;margin-bottom:24px}
+.footer-links li{margin-bottom:15px}
+.footer-links a{font-family:var(--mincho);color:#cfcac3;font-size:13.5px;letter-spacing:.06em;transition:.3s}
+.footer-links a:hover{color:#fff}
+.footer-info li{font-family:var(--mincho);color:#cfcac3;font-size:13.5px;margin-bottom:15px;display:flex;gap:14px;letter-spacing:.06em}
+.footer-info .k{font-family:var(--serif);color:var(--accent);font-size:12px;min-width:46px;letter-spacing:.1em}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom small{font-family:var(--serif);color:#8f8a83;font-size:12px;letter-spacing:.08em}
+
+/* ---------- モバイル追従バー ---------- */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(43,46,49,.96);backdrop-filter:blur(10px);padding:12px;gap:12px;border-top:1px solid var(--line-soft)}
+.mobile-bar .btn{flex:1;padding:15px;font-size:13px}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-visual{max-width:420px;margin:0 auto}
+  .concept{grid-template-columns:1fr;gap:0}
+  .concept .body{padding:44px 0 0}
+  .reasons{grid-template-columns:1fr;gap:50px}
+  .reason{padding:0}
+  .reason+.reason::before{display:none}
+  .services{grid-template-columns:1fr;gap:44px}
+  .plans{grid-template-columns:1fr}
+  .plan+.plan{border-left:0;border-top:1px solid var(--line-soft)}
+  .rep{grid-template-columns:1fr;gap:40px}
+  .rep-photo{max-width:340px;margin:0 auto}
+  .voices{grid-template-columns:1fr;gap:50px}
+  .footer-top{grid-template-columns:1fr;gap:36px}
+  .band{background-attachment:scroll}
+}
+@media(max-width:720px){
+  .nav,.header-cta{display:none}
+  .nav-toggle{display:flex}
+  .mobile-bar{display:flex}
+  body{padding-bottom:72px}
+  .nav.open{display:flex;position:fixed;inset:0;background:rgba(43,46,49,.98);flex-direction:column;justify-content:center;gap:34px;z-index:98}
+  .nav.open a{font-size:26px}
+  .nav.open a .j{font-size:11px;margin-top:4px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#" class="brand">
+      <span class="en">[GYM NAME]</span>
+      <span class="jp">なりたい自分へ、最短で。</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#concept">Concept<span class="j">想い</span></a>
+      <a href="#reasons">Features<span class="j">えらばれる理由</span></a>
+      <a href="#services">Program<span class="j">プログラム</span></a>
+      <a href="#price">Price<span class="j">料金</span></a>
+      <a href="#flow">Flow<span class="j">はじめかた</span></a>
+      <a href="#faq">FAQ<span class="j">よくある質問</span></a>
+    </nav>
+    <div class="header-cta">
+      <a href="#contact" class="btn btn-line">LINEで相談</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>
+        <span class="pre">あなたを変える、</span>
+        <span>パーソナル<span class="accent">ジム</span>。</span>
+        <span>なりたい自分へ。</span>
+      </h1>
+      <p class="sub">
+        がんばりすぎなくて、大丈夫。<br>
+        続かない・結果が出ない、ぜんぶ任せて。
+      </p>
+      <div class="rep-sign">
+        <span class="av"><img src="assets/trainer.svg" alt="担当トレーナー"></span>
+        <span class="t"><b>[トレーナー名]</b><i>代表トレーナー</i></span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame"><img src="assets/top.svg" alt="トレーニングの様子"></div>
+      <span class="cap">Change starts here.</span>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<!-- ================= CONCEPT ================= -->
+<section class="section alt" id="concept">
+  <div class="wrap">
+    <div class="hband reveal">
+      <div class="cband-head">
+        <div class="shead">
+          <span class="num">01</span>
+          <span class="titles"><span class="en">Concept</span><span class="jp">わたしたちの想い</span></span>
+        </div>
+      </div>
+      <span class="cline"></span>
+      <img class="cfig" src="assets/illust1p.svg" alt="ダンベルを持つ人のイラスト">
+    </div>
+    <div class="reveal">
+      <p class="concept-txt">
+        「ジムって、なんだかハードルが高い。<span class="accent">自分に続けられるか不安</span>」<br>
+        トレーニングを始めたい方から、そんな声をよくいただきます。<br><br>
+        でも、どうか身構えないでください。<br>
+        <span class="accent">運動が苦手でも、体力に自信がなくても、まったく問題ありません。</span><br>
+        わたしたちは、あなたのペースに寄り添う伴走者でありたいから。<br><br>
+        だからまずは、回数や重さの話より先に——<br>
+        あなたの<span class="accent">「なりたい姿」や「叶えたい暮らし」</span>を聞かせてください。<br>
+        トレーニングも、食事の小さな不安も、ぜんぶ一緒に考えます。
+      </p>
+      <p class="concept-sign">[GYM NAME]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 悩み共感 ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">02</span>
+        <span class="titles"><span class="en">Worries</span><span class="jp">こんな時に</span></span>
+      </div>
+      <p class="lead">これからカラダを変えたい方から、よくいただくお声です。</p>
+    </div>
+    <div class="worries reveal">
+      <div class="worry"><span class="n">01</span><p>ジムに入会しても、いつも三日坊主…。自分ひとりだと続けられない。</p></div>
+      <div class="worry"><span class="n">02</span><p>自己流で頑張っているけど、なかなか結果が出ない。やり方が合っているか不安。</p></div>
+      <div class="worry"><span class="n">03</span><p>ダイエットしても、いつもリバウンド…。今度こそ体型をキープしたい。</p></div>
+      <div class="worry"><span class="n">04</span><p>運動も食事も、何から始めればいいのか分からない。誰かに導いてほしい。</p></div>
+    </div>
+    <p class="worries-note reveal">その不安、ぜんぶ受け止めます。<span class="small">無理なく、あなたのペースで。むずかしいことは、やさしくかみ砕いてお伝えします。</span></p>
+  </div>
+</section>
+
+<!-- ================= 選ばれる理由 ================= -->
+<section class="section alt" id="reasons">
+  <div class="wrap">
+    <div class="hband reveal">
+      <div class="cband-head">
+        <div class="shead">
+          <span class="num">03</span>
+          <span class="titles"><span class="en">Features</span><span class="jp">えらばれる理由</span></span>
+        </div>
+      </div>
+      <span class="cline"></span>
+      <img class="cfig" src="assets/illust2p.svg" alt="ケトルベルと心拍のイラスト">
+    </div>
+    <p class="lead" style="margin:26px auto 0;text-align:center">「通って終わり」ではありません。<br>あなたの毎日のいちばん近くで、変化に伴走します。</p>
+    <div class="reasons">
+      <div class="reason reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div class="no">01</div>
+        <h3>完全個室の<br>マンツーマン</h3>
+        <p>人目を気にせず集中できる完全個室。あなた専属のトレーナーが、フォームから声かけまでつきっきりでサポートします。</p>
+      </div>
+      <div class="reason reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        <div class="no">02</div>
+        <h3>結果から逆算する<br>オーダーメイド</h3>
+        <p>目標・体力・生活リズムはひとりひとり違います。あなただけのプログラムを組み、数字で変化を見える化してお届けします。</p>
+      </div>
+      <div class="reason reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div class="no">03</div>
+        <h3>食事も伴走、<br>リバウンドさせない</h3>
+        <p>トレーニングだけでは変わりません。無理な食事制限ではなく、続けられる習慣づくりまで。卒業後も戻らないカラダへ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 帯（全面写真） ================= -->
+<section class="band" style="background-image:url('assets/salon2.svg')">
+  <div class="wrap inner reveal">
+    <p class="en">Tell us your goal.</p>
+    <h2>まずは、なりたい自分を聞かせてください。<br>厳しさより、続けられる仕組みを。</h2>
+  </div>
+</section>
+
+<!-- ================= プログラム ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">04</span>
+        <span class="titles"><span class="en">Program</span><span class="jp">プログラム</span></span>
+      </div>
+      <p class="lead">これから始める方も、伸び悩んでいる方も。<br>あなたの目標とステージに合わせて、ぴったりのサポートを。</p>
+    </div>
+    <div class="services">
+      <div class="svc reveal">
+        <div class="ph"><span class="no">01</span><img src="assets/welcome.svg" alt="パーソナルトレーニング"></div>
+        <h3>パーソナルトレーニング</h3>
+        <div class="en">Personal Training</div>
+        <p>完全個室でマンツーマン。正しいフォームと最適な負荷で、無駄なく効率的に。運動が苦手な方も安心して取り組めます。</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ph"><span class="no">02</span><img src="assets/interior.svg" alt="食事サポート"></div>
+        <h3>食事サポート</h3>
+        <div class="en">Diet Support</div>
+        <p>我慢だけのダイエットは卒業。何を食べるかを一緒に考え、LINEで日々サポート。続けられる食習慣が、一生モノの財産に。</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ph"><span class="no">03</span><img src="assets/consult.svg" alt="ボディメイク・オンライン"></div>
+        <h3>ボディメイク・オンライン</h3>
+        <div class="en">Body Make</div>
+        <p>ダイエットも、引き締めも、健康維持も。目的に合わせたボディメイク。忙しい方にはオンライン指導にも対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 料金 ================= -->
+<section class="section alt" id="price">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">05</span>
+        <span class="titles"><span class="en">Price</span><span class="jp">料金</span></span>
+      </div>
+      <p class="lead">「何にいくらかかるの？」が、ひと目でわかる。<br>目標と通えるペースに合わせて、無理のないプランを。</p>
+    </div>
+    <!-- ★料金は仮の参考値です。実際の金額に差し替えてください -->
+    <div class="plans reveal">
+      <div class="plan">
+        <div class="pname">体験トレーニング</div>
+        <div class="ptgt">はじめての方・お試し</div>
+        <div class="price"><span class="yen">¥</span>3,000<small>〜</small></div>
+        <div class="per">初回1回（税別）</div>
+        <ul><li>カウンセリング</li><li>体験トレーニング60分</li><li>体組成の測定</li><li>プラン提案</li></ul>
+        <a href="#contact" class="btn">申し込む</a>
+      </div>
+      <div class="plan featured">
+        <span class="tag">Recommended</span>
+        <div class="pname">月8回コース</div>
+        <div class="ptgt">しっかり結果を出したい方</div>
+        <div class="price"><span class="yen">¥</span>64,000<small>〜</small></div>
+        <div class="per">月額（税別）</div>
+        <ul><li>週2回のパーソナル</li><li>食事サポート（LINE）</li><li>オリジナルプログラム</li><li>体組成の定期測定</li></ul>
+        <a href="#contact" class="btn btn-fill">申し込む</a>
+      </div>
+      <div class="plan">
+        <div class="pname">月4回コース</div>
+        <div class="ptgt">自分のペースで続けたい方</div>
+        <div class="price"><span class="yen">¥</span>34,000<small>〜</small></div>
+        <div class="per">月額（税別）</div>
+        <ul><li>週1回のパーソナル</li><li>食事アドバイス</li><li>オリジナルプログラム</li><li>体組成の定期測定</li></ul>
+        <a href="#contact" class="btn">申し込む</a>
+      </div>
+    </div>
+    <p class="price-note">※ 上記は参考料金です。目標・回数・期間に合わせてぴったりのプランをご提案します。まずは体験・無料カウンセリングでお気軽に。</p>
+  </div>
+</section>
+
+<!-- ================= 流れ ================= -->
+<section class="section" id="flow">
+  <div class="wrap">
+    <div class="hband reveal">
+      <div class="cband-head">
+        <div class="shead">
+          <span class="num">06</span>
+          <span class="titles"><span class="en">Flow</span><span class="jp">はじめかた</span></span>
+        </div>
+      </div>
+      <span class="cline"></span>
+      <img class="cfig" src="assets/illust3p.svg" alt="走る人のイラスト">
+    </div>
+    <p class="lead" style="margin:26px auto 0;text-align:center">お問い合わせからスタートまで、かんたん4ステップ。<br>しつこい勧誘は一切ないので、ご安心を。</p>
+    <div class="flow reveal">
+      <div class="step"><span class="n">01</span><div><h4>お問い合わせ</h4><p>LINEかフォームから、ひとことでOK。24時間受付、1営業日以内にお返事します。</p></div></div>
+      <div class="step"><span class="n">02</span><div><h4>無料カウンセリング</h4><p>今のお悩みと目標をきかせてください。カラダの状態を確認し、最適なプランをご提案します。</p></div></div>
+      <div class="step"><span class="n">03</span><div><h4>体験トレーニング</h4><p>実際のセッションを体験。雰囲気やトレーナーとの相性を確かめてから決めて大丈夫です。</p></div></div>
+      <div class="step"><span class="n">04</span><div><h4>トレーニング開始</h4><p>ご入会後はすぐにスタート。あなた専属のトレーナーとして、目標達成まで伴走します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= トレーナー紹介 ================= -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">07</span>
+        <span class="titles"><span class="en">Trainer</span><span class="jp">担当トレーナー</span></span>
+      </div>
+    </div>
+    <div class="rep reveal">
+      <div class="rep-photo"><div class="disc"><img src="assets/trainer.svg" alt="担当トレーナー"></div></div>
+      <div class="rep-body">
+        <div class="role">Head Trainer</div>
+        <div class="name">[トレーナー名]<small>Trainer Name</small></div>
+        <p>※プロフィールはサンプルです。ご経歴・資格・実績に差し替えてご利用ください。競技経験やパーソナル指導の実績、保有資格（NSCA-CPTなど）を記載すると信頼感が高まります。数字の話より前に、あなたの「なりたい姿」から一緒に考えます。</p>
+        <p class="quote">最初の一歩って、勇気がいりますよね。<br>だからこそ、いちばん頼れる伴走者でいたい。<br>変化の楽しさを、あなたと一緒に見つけていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= お客様の声 ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">08</span>
+        <span class="titles"><span class="en">Voices</span><span class="jp">お客様の声</span></span>
+      </div>
+      <p class="lead">※ 掲載内容はサンプルです。実際のお客様の声に差し替えてご利用ください。</p>
+    </div>
+    <div class="voices reveal">
+      <div class="voice">
+        <span class="mark">“</span>
+        <p>三日坊主だった私が、はじめて続けられました。数字で変化が見えるから、通うのが毎回たのしみに。</p>
+        <div class="who">30代女性 ― ダイエット</div>
+      </div>
+      <div class="voice">
+        <span class="mark">“</span>
+        <p>食事もLINEで相談できるのが心強い。無理な我慢がないのに、しっかり体が引き締まりました。</p>
+        <div class="who">40代男性 ― ボディメイク</div>
+      </div>
+      <div class="voice">
+        <span class="mark">“</span>
+        <p>運動ゼロの私に、一から丁寧に教えてくれました。半年で見た目も体力も別人。もっと早く始めればよかった。</p>
+        <div class="who">50代女性 ― 健康維持</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="shead">
+        <span class="num">09</span>
+        <span class="titles"><span class="en">FAQ</span><span class="jp">よくある質問</span></span>
+      </div>
+    </div>
+    <div class="faq reveal">
+      <details class="qa"><summary>運動が苦手でも大丈夫ですか？<span class="cross"></span></summary><div class="a">はい、まったく問題ありません。会員さまの多くが運動初心者からのスタートです。体力や経験に合わせて、無理のないところから丁寧にサポートしますのでご安心ください。</div></details>
+      <details class="qa"><summary>体験だけでも受けられますか？<span class="cross"></span></summary><div class="a">はい。まずは無料カウンセリングと体験トレーニングからお試しいただけます。雰囲気やトレーナーとの相性を確かめてから、ゆっくりご検討ください。しつこい勧誘はありません。</div></details>
+      <details class="qa"><summary>持ち物は必要ですか？<span class="cross"></span></summary><div class="a">動きやすい服装があればOKです。ウェア・シューズ・タオル・お水などの無料レンタルやアメニティのご用意があります（内容は店舗により異なります）。手ぶらで通っていただけます。</div></details>
+      <details class="qa"><summary>厳しい食事制限はありますか？<span class="cross"></span></summary><div class="a">極端な制限はしません。続けられることを大切に、今の食生活を無理なく整えるところから一緒に進めます。外食やお酒との付き合い方もアドバイスします。</div></details>
+      <details class="qa"><summary>どのくらいで結果が出ますか？<span class="cross"></span></summary><div class="a">目標や体質によりますが、多くの方が2〜3ヶ月で変化を実感されています。まずはカウンセリングで、あなたに合った現実的なゴールと期間をご提案します。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="contact" style="background-image:url('assets/welcome.svg')">
+  <div class="wrap cta-inner reveal">
+    <p class="en">Your first step starts here.</p>
+    <h2>まずは、体験するくらいの気軽さで。<br>あなたの「なりたい」を、きかせてください。</h2>
+    <p>今のもやもやを整理するだけでも、きっと最初の一歩が見えてきます。</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-line">LINEで相談する</a>
+      <a href="tel:00000000000" class="btn btn-fill">☎ 000-0000-0000</a>
+    </div>
+    <p class="note">受付時間：[営業時間を記載] ／ LINE・フォームは24時間受付中</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="brand"><span class="en">[GYM NAME]</span><span class="jp">パーソナルジム</span></div>
+        <p class="footer-desc">がんばりすぎなくて、大丈夫。あなたのペースに寄り添う伴走者でいたい。続かない・戻ってしまう不安は私たちにまかせて、なりたい自分を目指しましょう。</p>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul class="footer-links">
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#reasons">Features</a></li>
+          <li><a href="#services">Program</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#flow">Flow</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="footer-info">
+          <li><span class="k">TEL</span><span>000-0000-0000</span></li>
+          <li><span class="k">Hours</span><span>※営業時間を記載</span></li>
+          <li><span class="k">Area</span><span>※エリア・オンライン対応</span></li>
+          <li><span class="k">Address</span><span>※店舗住所を記載</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; 2026 [GYM NAME]</small>
+      <small>Foundation design — 内容は差し替え・追記してご利用ください</small>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= モバイル追従バー ================= -->
+<div class="mobile-bar">
+  <a href="tel:00000000000" class="btn">☎ 電話</a>
+  <a href="#contact" class="btn btn-line">LINEで無料相談</a>
+</div>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+const nav=document.getElementById('nav'),tg=document.getElementById('navToggle');
+tg.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.addEventListener('click',e=>{if(e.target.closest('a'))nav.classList.remove('open')});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
