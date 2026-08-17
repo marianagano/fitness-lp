@@ -10,7 +10,7 @@
 <!-- ========== FONTS（HYROX風：グロテスク系サンセリフ×和文ゴシック） ========== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -32,8 +32,8 @@
   --accent:    #ffed00;   /* HYROXイエロー（差し色） */
   --maxw:      1180px;
   --serif:     "Archivo", sans-serif;             /* 英字ディスプレイ */
-  --mincho:    "Zen Kaku Gothic New", sans-serif; /* 和文見出し */
-  --gothic:    "Zen Kaku Gothic New", sans-serif; /* 和文本文 */
+  --mincho:    "Noto Sans JP", sans-serif;        /* 和文見出し */
+  --gothic:    "Noto Sans JP", sans-serif;        /* 和文本文 */
   --logo:      "Archivo", sans-serif;             /* ロゴ（会社名） */
 }
 
@@ -43,9 +43,9 @@ body{
   font-family:var(--gothic);
   background:var(--gray);
   color:var(--ink);
-  line-height:2.05;
-  font-weight:400;
-  letter-spacing:.05em;
+  line-height:1.9;
+  font-weight:500;
+  letter-spacing:.03em;
   font-feature-settings:"palt";
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -385,6 +385,34 @@ ul{list-style:none}
 .cta::before{background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.7))}
 /* 写真をモノクロに（HYROX風） */
 .hero-visual .frame img,.svc .ph img,.rep-photo .disc img{filter:grayscale(1) contrast(1.04)}
+/* --- タイポをタイトに（HYROX風） --- */
+.concept-txt{line-height:2.0;letter-spacing:.02em}
+.lead{line-height:1.85}
+.svc p,.reason p,.step p,.rep-body p,.qa .a,.voice p,.worry p,.plan ul li{line-height:1.9}
+.hero-copy h1{font-weight:900;line-height:1.28}
+.name,.reason h3,.svc h3,.plan .pname,.step h4{font-weight:900}
+p,li{overflow-wrap:break-word}
+/* --- レスポンシブ --- */
+@media(max-width:900px){ .hband{max-width:100%} }
+@media(max-width:720px){
+  .wrap{padding:0 22px}
+  .hero{min-height:86vh}
+  .hero::before{background:linear-gradient(180deg,rgba(10,10,12,.5) 0%,rgba(10,10,12,.8) 100%)}
+  .hero-copy{max-width:100%}
+  .hero-copy h1{font-size:clamp(30px,8.4vw,46px)}
+  .shead{gap:16px}
+  .shead .titles .en{font-size:clamp(30px,10vw,46px)}
+  .concept-txt{font-size:14.5px;line-height:1.95}
+  .concept-txt br{display:none}
+  .band h2,.cta h2{font-size:clamp(20px,5.6vw,28px)}
+  .worries-note{font-size:clamp(18px,4.4vw,22px)}
+  .rep{gap:26px}
+}
+@media(max-width:480px){
+  .plan{padding:38px 22px}
+  .hero-copy .sub{font-size:14px}
+  .nav.open a{font-size:22px}
+}
 </style>
 </head>
 
