@@ -435,14 +435,12 @@ p,li{overflow-wrap:break-word}
 .sec-y .cfig{filter:invert(1)}
 /* --- 02 お悩みを吹き出し式に --- */
 .worries{margin:52px auto 0;border-top:0;max-width:720px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:30px 34px}
-.worry{display:block;border-bottom:0;padding:26px 30px;background:#26262b;border-radius:16px;flex:0 1 300px;max-width:320px;position:relative;transition:.3s}
-.worry:hover{background:#2f2f36;padding:26px 30px}
+.worry{display:block;border-bottom:0;padding:26px 30px;background:#fff;border-radius:16px;flex:0 1 300px;max-width:320px;position:relative;transition:.3s}
+.worry:hover{background:#f1f1f1;padding:26px 30px}
 .worry .n{display:none}
-.worry p{font-family:var(--mincho);font-size:15px;line-height:1.85;color:var(--ink);text-align:center}
-.worry::after{content:"";position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid #26262b}
-.worry:hover::after{border-top-color:#2f2f36}
-.worry-people{display:flex;justify-content:center;gap:18px;margin-top:30px}
-.worry-people img{width:92px;height:auto;opacity:.9}
+.worry p{font-family:var(--mincho);font-size:15px;line-height:1.85;color:#111;text-align:center}
+.worry::after{content:"";position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid #fff}
+.worry:hover::after{border-top-color:#f1f1f1}
 @media(max-width:720px){ .worries{max-width:360px} .worry{flex-basis:100%} }
 </style>
 </head>
@@ -533,10 +531,6 @@ p,li{overflow-wrap:break-word}
       <div class="worry"><p>数字とか会計の話は、正直あまり得意じゃない…。ついていけるか不安。</p></div>
       <div class="worry"><p>自分のジムやスタジオを持ちたいけど、お金まわりは何から始めればいいの？</p></div>
       <div class="worry"><p>お金のことだけじゃなく、ジムづくりや集客の相談にものってくれる人がいたら。</p></div>
-    </div>
-    <div class="worry-people reveal">
-      <img src="assets/person-w.svg" alt="">
-      <img src="assets/person-m.svg" alt="">
     </div>
     <p class="worries-note reveal">その不安、ぜんぶ受け止めます。<span class="small">堅苦しさは抜きで。むずかしい話は、やさしい言葉に翻訳してお伝えします。</span></p>
   </div>
