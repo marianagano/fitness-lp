@@ -459,6 +459,9 @@ p,li{overflow-wrap:break-word}
   .cta-visual::before{background:linear-gradient(180deg,transparent 35%,var(--gray-dark) 100%)}
   .cta-copy{padding:34px 24px 54px}
 }
+/* --- 帯：Tell us your dream. を大きく薄いウォーターマークに --- */
+.band h2{position:relative;z-index:2}
+.band .en{font-family:var(--serif);font-weight:900;font-style:normal;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(40px,9vw,130px);line-height:.85;color:rgba(255,255,255,.11);margin:-.26em 0 0;white-space:nowrap;position:relative;z-index:1;pointer-events:none}
 </style>
 </head>
 
@@ -593,8 +596,8 @@ p,li{overflow-wrap:break-word}
 <!-- ================= 帯（全面写真） ================= -->
 <section class="band" style="background-image:url('assets/band.jpg')">
   <div class="wrap inner reveal">
-    <p class="en">Tell us your dream.</p>
     <h2>まずは、あなたの夢を聞かせてください。<br>お金の話は、それからで大丈夫。</h2>
+    <p class="en">Tell us your dream.</p>
   </div>
 </section>
 
