@@ -104,23 +104,23 @@ ul{list-style:none}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 100px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;width:100%}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 100px;overflow:hidden;background-size:cover;background-position:center right;background-repeat:no-repeat}
+.hero-grid{position:relative;z-index:2;width:100%}
 .hero-copy .who{display:flex;align-items:center;gap:14px;margin-bottom:30px;opacity:0;transform:translateY(18px);animation:rise .9s .1s forwards}
 .hero-copy .who .av{width:60px;height:60px;border-radius:50%;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;flex-shrink:0}
 .hero-copy .who .av img{width:46px;margin-bottom:-2px}
 .hero-copy .who .t{font-family:var(--mincho);font-size:12.5px;letter-spacing:.2em;color:var(--ink-mute);line-height:1.7}
 .hero-copy .who .t b{display:block;font-weight:500;font-size:14.5px;color:var(--ink);letter-spacing:.12em}
-.hero-copy h1{font-family:var(--mincho);font-weight:500;font-size:clamp(46px,7.9vw,89px);line-height:1.5;letter-spacing:.04em;margin-bottom:30px;text-align:right}
-.hero-copy h1 span:nth-child(2),.hero-copy h1 span:nth-child(3){padding-right:12%}
+.hero-copy h1{font-family:var(--mincho);font-weight:800;font-size:clamp(38px,6.2vw,74px);line-height:1.32;letter-spacing:.02em;margin-bottom:28px;text-align:left;color:#fff}
+.hero-copy h1 span:nth-child(2),.hero-copy h1 span:nth-child(3){padding-right:0}
 .hero-copy h1 .g-img{display:inline-block;height:1.55em;width:auto;vertical-align:-.5em;margin:0 .04em}
 .hero-copy h1 span{display:block;opacity:0;transform:translateY(26px)}
 .hero-copy h1 .pre{font-size:.36em;letter-spacing:.14em;margin-bottom:.15em;color:var(--ink-mute);text-align:center}
 .hero-copy h1 span:nth-child(1){animation:rise .9s .2s forwards}
 .hero-copy h1 span:nth-child(2){animation:rise .9s .34s forwards}
 .hero-copy h1 span:nth-child(3){animation:rise .9s .48s forwards}
-.hero-copy .sub{font-family:var(--mincho);color:var(--ink-mute);font-size:clamp(15px,1.9vw,18px);line-height:2.3;margin-bottom:40px;text-align:center;opacity:0;transform:translateY(18px);animation:rise .9s .58s forwards}
-.hero-copy .rep-sign{display:flex;align-items:center;justify-content:center;gap:21px;padding-right:12%;opacity:0;transform:translateY(18px);animation:rise .9s .74s forwards}
+.hero-copy .sub{font-family:var(--mincho);color:var(--ink-mute);font-size:clamp(15px,1.9vw,18px);line-height:2.3;margin-bottom:40px;text-align:left;opacity:0;transform:translateY(18px);animation:rise .9s .58s forwards}
+.hero-copy .rep-sign{display:flex;align-items:center;justify-content:flex-start;gap:21px;padding-right:0;opacity:0;transform:translateY(18px);animation:rise .9s .74s forwards}
 .hero-copy .rep-sign .av{width:81px;height:81px;border-radius:50%;overflow:hidden;border:1px solid var(--line);flex-shrink:0}
 .hero-copy .rep-sign .av img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
 .hero-copy .rep-sign .t{font-family:var(--mincho);line-height:1.7}
@@ -349,6 +349,11 @@ ul{list-style:none}
 /* ============================================================
    HYROX風 テーマ上書き（黒地 × 白 × イエロー／大文字グロテスク）
    ============================================================ */
+/* ヒーロー：全幅背景写真＋左テキスト（OXWM/HYROX型） */
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,10,12,.95) 0%,rgba(10,10,12,.82) 32%,rgba(10,10,12,.32) 62%,rgba(10,10,12,.5) 100%)}
+.hero-copy{max-width:600px}
+.hero-copy .sub{text-align:left;line-height:2.15}
+.hero-copy .sub .hl{background:var(--accent);color:#111;font-weight:700;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:.16em .55em;letter-spacing:.04em}
 /* 英字ディスプレイの大文字・太字化 */
 .shead .titles .en{font-weight:800;text-transform:uppercase;letter-spacing:.005em}
 .shead .num{color:var(--accent);font-weight:600}
@@ -408,26 +413,18 @@ ul{list-style:none}
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="hero">
+<section class="hero" style="background-image:url('assets/hero.jpg')">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1>
-        <span class="pre">フィットネスの</span>
-        <span><img class="g-img" src="assets/kakaritsuke.png" alt="かかりつけ"></span>
-        <span>税理士。</span>
+        <span>フィットネス</span>
+        <span>かかりつけ税理士</span>
       </h1>
-      <p class="sub">
-        かしこまらなくて、大丈夫。<br>
-        数字の不安は、ぜんぶ任せて。
-      </p>
+      <p class="sub"><span class="hl">かしこまらなくて、大丈夫。<br>数字の不安は、ぜんぶ任せて。</span></p>
       <div class="rep-sign">
         <span class="av"><img src="assets/tamai-body.jpg" alt="玉井 貴幸"></span>
         <span class="t"><b>玉井 貴幸</b><i>代表税理士</i></span>
       </div>
-    </div>
-    <div class="hero-visual">
-      <div class="frame"><img src="assets/hero.jpg" alt="洗練されたフィットネスジムの内観"></div>
-      <span class="cap">Feel free to ask.</span>
     </div>
   </div>
   <div class="scroll-cue">SCROLL</div>
