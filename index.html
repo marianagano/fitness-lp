@@ -419,6 +419,20 @@ p,li{overflow-wrap:break-word}
   .hero-copy .sub{font-size:14px}
   .nav.open a{font-size:22px}
 }
+/* --- 黄色セクション（02/06/09）：黄地 × 黒文字 --- */
+.section.sec-y{background:var(--accent)}
+.sec-y *{color:#111 !important}
+.sec-y .num::before{background:#111}
+.sec-y .qa summary::before{color:#111}
+.sec-y .qa summary::after,.sec-y .qa summary .cross{background:#111}
+.sec-y .worries{border-top-color:rgba(0,0,0,.2)}
+.sec-y .worry{border-bottom-color:rgba(0,0,0,.2)}
+.sec-y .worry:hover{background:rgba(0,0,0,.06)}
+.sec-y .step{border-bottom-color:rgba(0,0,0,.2)}
+.sec-y .step:first-child{border-top-color:rgba(0,0,0,.2)}
+.sec-y .qa{border-bottom-color:rgba(0,0,0,.2)}
+.sec-y .cline{background:rgba(0,0,0,.35)}
+.sec-y .cfig{filter:invert(1)}
 </style>
 </head>
 
@@ -494,7 +508,7 @@ p,li{overflow-wrap:break-word}
 </section>
 
 <!-- ================= 悩み共感 ================= -->
-<section class="section">
+<section class="section sec-y">
   <div class="wrap">
     <div class="center reveal">
       <div class="shead">
@@ -634,7 +648,7 @@ p,li{overflow-wrap:break-word}
 </section>
 
 <!-- ================= 流れ ================= -->
-<section class="section" id="flow">
+<section class="section sec-y" id="flow">
   <div class="wrap">
     <div class="hband reveal">
       <div class="cband-head">
@@ -708,7 +722,7 @@ p,li{overflow-wrap:break-word}
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="section alt" id="faq">
+<section class="section alt sec-y" id="faq">
   <div class="wrap">
     <div class="center reveal">
       <div class="shead">
