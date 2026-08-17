@@ -7,10 +7,10 @@
 <title>税理士法人G&Jパートナーズ｜フィットネスのかかりつけ税理士。数字の不安は、まかせてね。</title>
 <meta name="description" content="これから独立・開業するパーソナルトレーナーやジムオーナーのための、かかりつけ税理士。堅苦しさは抜きで、数字がわからなくても大丈夫。あなたの夢とジムづくりに寄り添います。初回相談無料・LINE相談OK。">
 
-<!-- ========== FONTS（明朝×セリフのエレガント系） ========== -->
+<!-- ========== FONTS（HYROX風：グロテスク系サンセリフ×和文ゴシック） ========== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -19,22 +19,22 @@
    ============================================================ */
 
 :root{
-  --gray:      #f4ecdf;   /* ベージュ（メイン背景。添付参考） */
-  --gray-alt:  #ece1d0;   /* 少し深いベージュ（交互セクション） */
-  --gray-dark: #4e4034;   /* 濃いブラウン（フッター・帯のオーバーレイ用） */
-  --panel:     rgba(90,74,59,.05);
-  --panel-2:   rgba(90,74,59,.09);
-  --line:      rgba(90,74,59,.22);
-  --line-soft: rgba(90,74,59,.13);
-  --ink:       #5a4a3b;   /* ブラウン（主要テキスト） */
-  --ink-mute:  rgba(90,74,59,.75);  /* ブラウン（本文・副次テキスト） */
-  --ink-dim:   rgba(90,74,59,.5);
-  --accent:    #dd7a50;   /* コーラル／オレンジの差し色（添付参考） */
+  --gray:      #1a1a1d;   /* 黒ベース（メイン背景。HYROX風） */
+  --gray-alt:  #232327;   /* 少し明るいチャコール（交互セクション） */
+  --gray-dark: #0b0b0d;   /* ほぼ純黒（フッター・帯のオーバーレイ用） */
+  --panel:     rgba(255,255,255,.04);
+  --panel-2:   rgba(255,255,255,.08);
+  --line:      rgba(255,255,255,.16);
+  --line-soft: rgba(255,255,255,.09);
+  --ink:       #ffffff;   /* 白（主要テキスト） */
+  --ink-mute:  rgba(255,255,255,.66);  /* 白（本文・副次テキスト） */
+  --ink-dim:   rgba(255,255,255,.4);
+  --accent:    #ffed00;   /* HYROXイエロー（差し色） */
   --maxw:      1180px;
-  --serif:     "Cormorant Garamond", serif;      /* 英字ディスプレイ */
-  --mincho:    "Shippori Mincho", serif;          /* 和文見出し */
+  --serif:     "Archivo", sans-serif;             /* 英字ディスプレイ */
+  --mincho:    "Zen Kaku Gothic New", sans-serif; /* 和文見出し */
   --gothic:    "Zen Kaku Gothic New", sans-serif; /* 和文本文 */
-  --logo:      "Cinzel", serif;                   /* ロゴ（会社名） */
+  --logo:      "Archivo", sans-serif;             /* ロゴ（会社名） */
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -346,6 +346,40 @@ ul{list-style:none}
   .nav.open a{font-size:26px}
   .nav.open a .j{font-size:11px;margin-top:4px}
 }
+/* ============================================================
+   HYROX風 テーマ上書き（黒地 × 白 × イエロー／大文字グロテスク）
+   ============================================================ */
+/* 英字ディスプレイの大文字・太字化 */
+.shead .titles .en{font-weight:800;text-transform:uppercase;letter-spacing:.005em}
+.shead .num{color:var(--accent);font-weight:600}
+.shead .titles .jp{color:var(--ink-mute)}
+.brand .en{text-transform:uppercase;letter-spacing:.18em;font-weight:800}
+.brand .jp{color:var(--ink-mute)}
+.nav a{color:var(--ink);text-transform:uppercase;font-weight:600;letter-spacing:.1em}
+.nav a .j{color:var(--ink-mute);font-family:var(--gothic);text-transform:none}
+/* イタリックの飾りをやめて大文字ラベルに */
+.band .en,.svc .en,.rep-body .role,.hero-visual .cap{font-style:normal;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.footer h5{text-transform:uppercase;font-weight:700;letter-spacing:.14em}
+.voice .mark{color:var(--accent)}
+/* 和文見出しを太めに（インパクト重視） */
+.hero-copy h1{font-weight:800;letter-spacing:.02em}
+.name,.reason h3,.svc h3,.plan .pname,.step h4,.worries-note,.band h2,.cta h2,.rep-body .quote,.rep-quote{font-weight:700}
+/* ボタン：角ばり＋ホバーでイエロー */
+.btn{text-transform:uppercase;font-weight:700;letter-spacing:.1em}
+.btn:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn-fill{background:#fff;color:#111;border-color:#fff}
+.btn-fill:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn-solid{background:var(--accent);border-color:var(--accent);color:#111}
+.btn-solid:hover{background:transparent;color:var(--ink);border-color:var(--line)}
+/* ヘッダー／メニュー／追従バーの地色を黒系に */
+.site-header.scrolled{background:rgba(18,18,21,.9)}
+.mobile-bar{background:rgba(11,11,13,.96)}
+.nav.open{background:rgba(11,11,13,.98)}
+/* 帯・CTAのオーバーレイを黒に */
+.band::before{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6))}
+.cta::before{background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.7))}
+/* 写真をモノクロに（HYROX風） */
+.hero-visual .frame img,.svc .ph img,.rep-photo .disc img{filter:grayscale(1) contrast(1.04)}
 </style>
 </head>
 
