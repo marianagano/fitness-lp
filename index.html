@@ -393,7 +393,12 @@ ul{list-style:none}
 .name,.reason h3,.svc h3,.plan .pname,.step h4{font-weight:900}
 p,li{overflow-wrap:break-word}
 /* --- レスポンシブ --- */
-@media(max-width:900px){ .hband{max-width:100%} }
+@media(max-width:960px){
+  .hband{max-width:100%}
+  .concept-txt br{display:none}
+  .concept-txt{font-size:15px;line-height:1.95;max-width:100%}
+  .lead br{display:none}
+}
 @media(max-width:720px){
   .wrap{padding:0 22px}
   .hero{min-height:86vh}
