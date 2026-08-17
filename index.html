@@ -442,6 +442,23 @@ p,li{overflow-wrap:break-word}
 .worry::after{content:"";position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:15px solid #fff}
 .worry:hover::after{border-top-color:#f1f1f1}
 @media(max-width:720px){ .worries{max-width:360px} .worry{flex-basis:100%} }
+/* --- CTA：左テキスト × 右グラデ画像（HYROX風） --- */
+.cta{position:relative;text-align:left;padding:0;background:var(--gray-dark);overflow:hidden}
+.cta::before{display:none}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:500px}
+.cta-copy{padding:clamp(56px,7vw,96px) clamp(26px,5vw,68px);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.cta-copy h2{text-align:left;margin-bottom:20px}
+.cta-copy p{text-align:left;color:rgba(255,255,255,.82)}
+.cta-copy .cta-actions{justify-content:flex-start;margin-top:8px}
+.cta-copy .note{text-align:left}
+.cta-visual{position:relative;background-size:cover;background-position:center}
+.cta-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--gray-dark) 0%,rgba(11,11,13,.55) 26%,transparent 58%)}
+@media(max-width:820px){
+  .cta-grid{grid-template-columns:1fr}
+  .cta-visual{order:-1;min-height:240px}
+  .cta-visual::before{background:linear-gradient(180deg,transparent 35%,var(--gray-dark) 100%)}
+  .cta-copy{padding:34px 24px 54px}
+}
 </style>
 </head>
 
@@ -750,15 +767,18 @@ p,li{overflow-wrap:break-word}
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="cta" id="contact" style="background-image:url('assets/cta.jpg')">
-  <div class="wrap cta-inner reveal">
-    <h2>まずは、お茶するくらいの気軽さで。<br>あなたの話を、きかせてください。</h2>
-    <p>今のもやもやを整理するだけでも、きっと次の一歩が見えてきます。</p>
-    <div class="cta-actions">
-      <a href="#" class="btn btn-line">LINEで相談する</a>
-      <a href="tel:05030333310" class="btn btn-fill">☎ 050-3033-3310</a>
+<section class="cta" id="contact">
+  <div class="cta-grid">
+    <div class="cta-copy reveal">
+      <h2>一人じゃないから、<br>解決できる。</h2>
+      <p>今のもやもやを整理するだけでも、<br>きっと次の一歩が見えてきます。</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-line">LINEで相談する</a>
+        <a href="tel:05030333310" class="btn btn-fill">☎ 050-3033-3310</a>
+      </div>
+      <p class="note">受付時間：平日 9:00〜18:00 ／ LINE・フォームは24時間受付中</p>
     </div>
-    <p class="note">受付時間：平日 9:00〜18:00 ／ LINE・フォームは24時間受付中</p>
+    <div class="cta-visual" style="background-image:url('assets/cta.jpg')"></div>
   </div>
 </section>
 
