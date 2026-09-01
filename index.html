@@ -418,6 +418,8 @@ p,li{overflow-wrap:break-word}
   .rep{gap:26px}
   /* 和文：文単位で折り返し（句点で改行しやすく／1〜2文字の孤立を防ぐ） */
   .concept-txt,.lead,.worry p,.reason p,.svc p,.step p,.rep-body p,.qa .a,.voice p,.plan ul li,.cta-copy p,.worries-note{word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
+  /* 引用文：各文を均等な行長に（短い孤立行を防ぐ） */
+  .rep-quote{font-size:15px;line-height:1.85;text-wrap:balance}
 }
 @media(max-width:480px){
   .plan{padding:38px 22px}
