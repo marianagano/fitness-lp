@@ -416,6 +416,8 @@ p,li{overflow-wrap:break-word}
   .band h2,.cta h2{font-size:clamp(20px,5.6vw,28px)}
   .worries-note{font-size:clamp(18px,4.4vw,22px)}
   .rep{gap:26px}
+  /* 和文：文単位で折り返し（句点で改行しやすく／1〜2文字の孤立を防ぐ） */
+  .concept-txt,.lead,.worry p,.reason p,.svc p,.step p,.rep-body p,.qa .a,.voice p,.plan ul li,.cta-copy p,.worries-note{word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
 }
 @media(max-width:480px){
   .plan{padding:38px 22px}
@@ -838,6 +840,10 @@ tg.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.addEventListener('click',e=>{if(e.target.closest('a'))nav.classList.remove('open')});
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* 和文：句点(。)の直後に改行機会を挿入し、文単位で折り返す */
+document.querySelectorAll('.concept-txt,.lead,.worry p,.reason p,.svc p,.step p,.rep-body p,.qa .a,.voice p,.plan ul li,.cta-copy p,.worries-note').forEach(el=>{
+  if(el.innerHTML.indexOf('。')>-1) el.innerHTML=el.innerHTML.replace(/。/g,'。<wbr>');
+});
 </script>
 </body>
 </html>
