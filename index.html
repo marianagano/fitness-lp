@@ -394,6 +394,7 @@ ul{list-style:none}
 .name,.reason h3,.svc h3,.plan .pname,.step h4{font-weight:900}
 p,li{overflow-wrap:break-word}
 /* --- レスポンシブ --- */
+.spbr{display:none}
 @media(max-width:960px){
   .hband{max-width:100%}
   .concept-txt br{display:none}
@@ -413,6 +414,7 @@ p,li{overflow-wrap:break-word}
   .shead .titles{white-space:nowrap}
   .concept-txt{font-size:14.5px;line-height:1.95}
   .concept-txt br{display:none}
+  .lead br.spbr{display:inline}
   .band h2,.cta h2{font-size:clamp(20px,5.6vw,28px)}
   .worries-note{font-size:clamp(18px,4.4vw,22px)}
   .rep{gap:26px}
@@ -616,7 +618,7 @@ p,li{overflow-wrap:break-word}
         <span class="num">04</span>
         <span class="titles"><span class="en">Service</span><span class="jp">できること</span></span>
       </div>
-      <p class="lead">これから開業するトレーナーさんも、すでにジムを構えている方も。<br>あなたの事業のステージに合わせて、ぴったりのサポートを。</p>
+      <p class="lead">これから開業するトレーナーさんも、<br class="spbr">すでにジムを構えている方も。<br><br class="spbr">あなたの事業のステージに合わせて、<br class="spbr">ぴったりのサポートを。</p>
     </div>
     <div class="services">
       <div class="svc reveal">
