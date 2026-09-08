@@ -1,0 +1,33 @@
+name: Deploy fitness.gjtax.net (Xserver)
+
+# main に push すると自動で Xサーバーの fitness.gjtax.net へアップロードします。
+# GitHub の Actions タブから手動実行（Run workflow）もできます。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      - name: XサーバーへFTPアップロード
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}       # 例: sv####.xserver.jp
+          username: ${{ secrets.FTP_USERNAME }}    # fitness用の追加FTPユーザー名
+          password: ${{ secrets.FTP_PASSWORD }}    # そのFTPパスワード
+          protocol: ftps                            # XサーバーはFTPS推奨
+          port: 21
+          # 追加FTPアカウントの接続先を fitness フォルダに限定するので、
+          # 転送先はそのルート（./）でOK
+          server-dir: ./
+          # LP本体（index.html と assets）だけをアップ。その他は除外
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/*.zip
